@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <router-link to='/'>bar</router-link>
     <router-link to='/foo'>foo</router-link>
     <router-link to='/hello_async'>hello_async</router-link>
@@ -9,6 +9,6 @@
 
 <script>
 export default {
-    name: 'App',
+  name: 'App'
 }
 </script>
