@@ -1,9 +1,9 @@
 import { createApp } from './app.js';
 export default function (context) {
     //这个方法服务端渲染会调用
-    return new Promise((reslove, reject) => {
+    return new Promise((resolve, reject) => {
+        // 为每一个请求, 创建单例的Vue对象
         const { app, store, router } = createApp();
-        //context.url => renderer.renderToString({url: req.url})
         //服务端跳转页面
         router.push(context.url);
         //服务端跳转页面完成
@@ -26,7 +26,7 @@ export default function (context) {
             })).then(() => {
                 // 状态将自动序列化为 `window.__INITIAL_STATE__`，并注入 HTML。
                 context.state = store.state
-                reslove(app)
+                resolve(app)
             })
         })
     })
