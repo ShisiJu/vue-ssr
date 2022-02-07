@@ -4,7 +4,7 @@ const express = require('express');
 const server = express();
 server.use(express.static('dist'));
 //获取到服务端vue代码
-const template = fs.readFileSync(path.resolve(__dirname, './src/index.template.html'), 'utf-8');
+const template = fs.readFileSync(path.resolve(__dirname, './dist/index.ssr.html'), 'utf-8');
 // const clientManifest = path.resolve(__dirname, './dist/vue-ssr-client-manifest.json');
 const serverBundle = path.resolve(__dirname, './dist/vue-ssr-server-bundle.json');
 const renderer = require('vue-server-renderer').createBundleRenderer(serverBundle, {

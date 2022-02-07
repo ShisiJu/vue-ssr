@@ -7,13 +7,14 @@ Vue.use(Vuex);
 export default function createStore() {
     return new Vuex.Store({
         state: {
-            article: '数据'
+            article: '原始数据'
         },
         actions: {
             GET_ARTICLE({ commit }) {
+                // 模仿异步请求, 延迟1s
                 return new Promise((r) => {
                     setTimeout(() => {
-                        commit('SET_ARTICLE', 'vuex数据')
+                        commit('SET_ARTICLE', '调用异步请求后的数据')
                         r()
                     }, 1000);
                 })
